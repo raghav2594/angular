@@ -20,4 +20,8 @@ export class SellerComponent {
     return this.sellers;
   }
 
+  toggle(): void {
+    this.isHide = !this.isHide;
+  }
+
 }
