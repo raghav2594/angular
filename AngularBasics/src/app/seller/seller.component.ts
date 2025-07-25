@@ -9,9 +9,11 @@ import { Component } from '@angular/core';
 export class SellerComponent {
 
   sellers :string[];
+  isHide : boolean;
 
   constructor() {
     this.sellers = ['Apple', 'RedMi', 'RealMe'];
+    this.isHide = false;
   }
 
   getSellers(): string[] {
