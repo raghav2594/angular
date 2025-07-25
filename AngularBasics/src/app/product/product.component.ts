@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SellerComponent } from '../seller/seller.component';
+import { ParentComponent } from '../parent/parent.component';
 
 
 interface Product{
@@ -12,7 +13,7 @@ interface Product{
 @Component({
   selector: 'app-product',
   standalone: true,
-  imports: [SellerComponent, CommonModule],
+  imports: [SellerComponent, ParentComponent ,CommonModule],
   templateUrl: './product.component.html',
   styleUrl: './product.component.css'
 })
