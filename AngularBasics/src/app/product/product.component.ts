@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
+import { SellerComponent } from '../seller/seller.component';
 
 @Component({
   selector: 'app-product',
   standalone: true,
-  imports: [],
+  imports: [SellerComponent],
   templateUrl: './product.component.html',
   styleUrl: './product.component.css'
 })
