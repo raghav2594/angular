@@ -1,4 +1,7 @@
-<div><p>product works!</p>
-<h1>{{getProductDetails()}}</h1>
-<app-seller></app-seller>
+<div *ngFor = "let product of products">
+    <b>{{ product.id }}</b><br/>
+    <b>{{ product.name }}</b><br/>
+    <b>{{ product.price }}</b>
 </div>
+
+<app-seller></app-seller>

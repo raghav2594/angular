@@ -1,24 +1,33 @@
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { SellerComponent } from '../seller/seller.component';
+
+
+interface Product{
+  id: number;
+  name: string;
+  price: number;
+}
 
 @Component({
   selector: 'app-product',
   standalone: true,
-  imports: [SellerComponent],
+  imports: [SellerComponent, CommonModule],
   templateUrl: './product.component.html',
   styleUrl: './product.component.css'
 })
+
 export class ProductComponent {
-  id:number;
-  name:string;
-  price:number;
-  
-  constructor() {
-    this.id = 1;
-    this.name = 'Sample Product';
-    this.price = 100;
+
+  products: Product[]
+   constructor() {
+    this.products = [
+      { id: 1, name: 'Product A', price: 100 },
+      { id: 2, name: 'Product B', price: 200 },
+      { id: 3, name: 'Product C', price: 300 }
+    ];   
   }
-  public getProductDetails() {
-    return `Product ID: ${this.id}, Name: ${this.name}, Price: $${this.price}`;
-  }
+   getProducts(): Product[] {
+      return this.products;
+    }
 }
