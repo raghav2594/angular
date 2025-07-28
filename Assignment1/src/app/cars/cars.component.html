@@ -1,0 +1,9 @@
+<div [hidden]="hideCar">
+    <div *ngFor = "let car of getCars()">
+  <h2>{{car.name}}</h2>
+  <p>Year: {{car.year}}</p>
+  <p>Make: {{car.make }}</p>
+  <p>Model: {{car.model}}</p>
+    </div>  
+</div>    
+ <button (click)="getHideCar()">Delete</button>

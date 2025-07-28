@@ -1,0 +1,6 @@
+Create a new project
+Create a new cars component
+In cars component typescript file
+1) add array of cars like below
+	car : name, model, year.
+2) add button to hide and show the cars details
