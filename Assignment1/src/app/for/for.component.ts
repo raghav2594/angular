@@ -19,6 +19,8 @@ export class ForComponent {
   movies: IMovie[];
   color : string;
   fontSize : number;
+  showTdata  : boolean;
+  tDataObj : Object;
 
   constructor() {
     this.courses = ['Angular', 'React', 'Vue', 'Svelte'];
@@ -30,6 +32,8 @@ export class ForComponent {
     ];
     this.color = 'blue';
     this.fontSize = 25;
+    this.showTdata = true;
+    this.tDataObj = {tdata : this.showTdata}
   }
 
 
