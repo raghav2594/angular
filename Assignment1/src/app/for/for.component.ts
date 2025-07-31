@@ -17,6 +17,8 @@ export class ForComponent {
 
   courses : string[];
   movies: IMovie[];
+  color : string;
+  fontSize : number;
 
   constructor() {
     this.courses = ['Angular', 'React', 'Vue', 'Svelte'];
@@ -26,6 +28,8 @@ export class ForComponent {
       { title: 'Interstellar', year: 2014, director: 'Christopher Nolan' },
       { title: 'The Shawshank Redemption', year: 1994, director: 'Frank Darabont' }
     ];
+    this.color = 'blue';
+    this.fontSize = 25;
   }
 
 

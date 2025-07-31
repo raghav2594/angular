@@ -13,7 +13,7 @@
   </thead>
   <tbody>
     <tr *ngFor="let movie of movies">
-      <td [style.color] = "'red'">{{ movie.title }}</td>
+      <td [style.color] = "color" [style.font-size.px] = 'fontSize'>{{ movie.title }}</td>  <!-- dynamic styling from typeScript-->
       <td [ngStyle] = "{color: 'green', 'background-color':'yellow'}">{{ movie.director }}</td>
       <td>{{ movie.year }}</td>
     </tr>
