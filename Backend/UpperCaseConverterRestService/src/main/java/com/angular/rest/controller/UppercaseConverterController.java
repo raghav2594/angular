@@ -11,9 +11,9 @@ import com.angular.rest.dto.MessageRequest;
 
 @RestController
 @RequestMapping("/api")
+@CrossOrigin(origins = "*", maxAge = 4800)
 public class UppercaseConverterController {
 	
-	@CrossOrigin(origins = "http://localhost:4200")
     @PostMapping("/uppercase")
     public ResponseEntity<MessageRequest> uppercaseConverter(@RequestBody MessageRequest request)
 	{
