@@ -1,0 +1,20 @@
+<h1>{{userResult.message}}</h1>
+
+<h2>Customer List</h2>
+
+<table border="1" *ngIf="customerResult && customerResult.records">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>City</th>
+      <th>Country</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let customer of customerResult.records">
+      <td>{{ customer.Name }}</td>
+      <td>{{ customer.City }}</td>
+      <td>{{ customer.Country }}</td>
+    </tr>
+  </tbody>
+</table>
