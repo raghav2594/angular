@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/api/products")
+@RequestMapping("/api/products/")
 @CrossOrigin(origins = "*") // Optional: allow Angular frontend to access this API
 public class ProductController {
 
@@ -24,7 +24,7 @@ public class ProductController {
     }
 
     // GET product by ID
-    @GetMapping("/{id}")
+    @GetMapping("{id}")
     public ResponseEntity<Product> getProductById(@PathVariable Integer id) {
         Optional<Product> product = productRepository.findById(id);
         return product.map(ResponseEntity::ok)
@@ -38,9 +38,9 @@ public class ProductController {
     }
 
     // PUT update product
-    @PutMapping("/{id}")
-    public ResponseEntity<Product> updateProduct(@PathVariable Integer id, @RequestBody Product updatedProduct) {
-        return productRepository.findById(id)
+    @PutMapping()
+    public ResponseEntity<Product> updateProduct(@RequestBody Product updatedProduct) {
+        return productRepository.findById(updatedProduct.getId())
             .map(existingProduct -> {
                 existingProduct.setName(updatedProduct.getName());
                 existingProduct.setModel(updatedProduct.getModel());
