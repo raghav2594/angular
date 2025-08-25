@@ -1,21 +1,25 @@
 import { Component } from '@angular/core';
+import { ProductDataService } from '../../services/product-data.service';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-update',
-  imports: [],
+  imports: [CommonModule, FormsModule],
   templateUrl: './update.component.html',
-  styleUrl: './update.component.css'
+  styleUrl: './update.component.css',
+  standalone: true
 })
 export class UpdateComponent {
 
   public updateResponse:any;
 
-  public id1:any;
-  public name1:any;
-  public price1:any;
-  public model1:any;
+  public id:any;
+  public name:any;
+  public price:any;
+  public model:any;
 
-    constructor(private _produtService:any) { } // Assuming _produtService is injected properly
+    constructor(private _produtService:ProductDataService) { } // Assuming _produtService is injected properly
 
     updateProduct(product:any) {
     this._produtService.updateProduct(product).subscribe(

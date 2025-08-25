@@ -1,10 +1,15 @@
 import { Component } from '@angular/core';
+import { ProductDataService } from '../../services/product-data.service';
+import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
+
 
 @Component({
   selector: 'app-create',
-  imports: [],
+  imports: [FormsModule, CommonModule],
   templateUrl: './create.component.html',
-  styleUrl: './create.component.css'
+  styleUrl: './create.component.css',
+  standalone: true
 })
 export class CreateComponent {
 
@@ -16,7 +21,7 @@ export class CreateComponent {
 
   public createResponse:any;
 
-  constructor(private _produtService:any) {}
+  constructor(private _produtService:ProductDataService) {}
 
   createProduct(product:any) {
     this._produtService.createProduct(product).subscribe(

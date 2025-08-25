@@ -1,1 +1,4 @@
-<p>delete works!</p>
+<h1>Delete Product</h1>
+Id: <input type="number" [(ngModel)]="id" placeholder="Product id" /> <br/>
+<button (click)="deleteProduct(id)">Delete Product</button>
+<h2>{{deleteResponse | json }}</h2>

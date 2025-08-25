@@ -1,18 +1,21 @@
 import { Component } from '@angular/core';
 import { ProductDataService } from '../../services/product-data.service';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms'; // <-- Import FormsModule
 
 @Component({
   selector: 'app-fetch',
-  imports: [],
+  imports: [CommonModule, FormsModule],
   templateUrl: './fetch.component.html',
-  styleUrl: './fetch.component.css'
+  styleUrl: './fetch.component.css',
+  standalone: true
 })
 export class FetchComponent {
 
-    public id2:any;
-    public name2:any;
-    public price2:any;
-    public model2:any;
+    public id:any;
+    public name:any;
+    public price:any;
+    public model:any;
 
     public productResponse:any;
 

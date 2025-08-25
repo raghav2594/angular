@@ -1,1 +1,7 @@
-<p>create works!</p>
+<h1>Create Product</h1>
+<input type="number" [(ngModel)]="id" hidden placeholder="Product id" /> <br/>
+Name: <input type="text" [(ngModel)]="name" placeholder="Product Name" /> <br/>
+Model: <input type="text" [(ngModel)]="model" placeholder="Product Model" /> <br/>
+Price: <input type="number" [(ngModel)]="price" placeholder="Product Price" /> <br/>
+<button (click)="createProduct({'id' : id, 'name' :name, 'model' : model, 'price' : price})">Create Product</button>
+<h2>{{createResponse | json }}</h2>

@@ -1,1 +1,7 @@
-<p>update works!</p>
+<h1>Update Product</h1>
+Id: <input type="number" [(ngModel)]="id" placeholder="Product id" /> <br/>
+Name: <input type="text" [(ngModel)]="name" placeholder="Product Name" /> <br/>
+Model: <input type="text" [(ngModel)]="model" placeholder="Product Model" /> <br/>
+Price: <input type="number" [(ngModel)]="price" placeholder="Product Price" /> <br/>
+<button (click)="updateProduct({'id' : id, 'name' :name, 'model' : model, 'price' : price})">Update Product</button>
+<h2>{{updateResponse | json }}</h2>
