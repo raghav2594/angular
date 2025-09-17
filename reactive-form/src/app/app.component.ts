@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ReactiveFormsModule, FormGroup, FormControl } from '@angular/forms';
+import { ReactiveFormsModule, FormGroup, FormControl, Validators } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 
@@ -19,7 +19,8 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
     this.personForm = new FormGroup({
-      firstName: new FormControl(),
+      firstName: new FormControl("",[Validators.required, Validators.minLength(3), 
+        Validators.maxLength(10)]),
       lastName: new FormControl('Raju'),
       email: new FormControl(),
       gender: new FormControl(),
@@ -33,5 +34,7 @@ export class AppComponent implements OnInit {
 
   onSubmit() {
     console.log(this.personForm.value);
+    console.log(this.personForm.valid);
+
   }
 }
