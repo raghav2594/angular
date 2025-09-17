@@ -48,12 +48,14 @@
       <label>City</label>
       <input type="text" class="form-control" formControlName="city" />
 
-      <label>Country</label>
-      <select class="form-control" formControlName="country">
-        <option value="USA">USA</option>
-        <option value="IND">IND</option>
-        <option value="GER">GER</option>
-      </select>
+      
+    <label>Country</label>
+    <select class="form-control" formControlName="country">
+    <option *ngFor="let country of countries" [value]="country">
+      {{ country }}
+    </option>
+    </select>
+
     </div>
 
     <!-- Submit Button -->

@@ -16,8 +16,10 @@ import { RouterOutlet } from '@angular/router';
 })
 export class AppComponent implements OnInit {
   public personForm!: FormGroup;
+  public countries!: string[];
 
   ngOnInit() {
+    this.countries = ["IND", "USA", "GER", "AUS", "UK"];
     this.personForm = new FormGroup({
       firstName: new FormControl("",[Validators.required, Validators.minLength(3), 
         Validators.maxLength(10)]),
