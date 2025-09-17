@@ -6,7 +6,17 @@
       <label>First Name</label>
       <input type="text" class="form-control" formControlName="firstName" />
     </div>
+    <div class = "alert alert-danger" *ngIf = "personForm.controls['firstName'].hasError('required')">
+        First name cannot be empty
+    </div>
 
+    <div class="alert alert-danger" *ngIf="personForm.get('firstName')?.hasError('maxlength')">
+        Maximum length should be 10 characters
+    </div>
+
+    <div class = "alert alert-danger" *ngIf = "personForm.controls['firstName'].hasError('minlength')">
+        Minimum length should be atleast 3 characters
+    </div>
     <!-- Last Name -->
     <div class="form-group">
       <label>Last Name</label>
